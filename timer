@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+
+import time
+import random as r
+import colors as c
+seconds = 1
+while True:
+    print(c.random_color() + (str(seconds) + 'seconds'))
+    time.sleep(1)
+    seconds += 1
