@@ -3,8 +3,33 @@
 import time
 import random as r
 import colors as c
-seconds = 1
+
+hundredths = 0
+seconds = 0
+minutes = 0
+hours = 0
+days = 0
+
 while True:
-    print(c.random_color() + (str(seconds) + 'seconds'))
-    time.sleep(1)
-    seconds += 1
+    time.sleep(0.01)
+    print(c.clear + c.red + '[Control-C to stop]' + c.reset)
+    print('{}-{}:{}:{}.{}'.format(days,hours,minutes,seconds,hundredths))
+    print(days)
+    print(hours)
+    print(minutes)
+    print(seconds)
+    print(hundredths)
+    hundredths += 1
+    if hundredths == 100:
+        seconds += 1
+        hundredths = 0
+    if seconds == 60:
+        minutes += 1
+        seconds = 0
+    if minutes == 60:
+        hours += 1
+        minutes = 0
+    if hours == 24:
+        days += 1
+        hours = 0
+
